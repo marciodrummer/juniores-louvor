@@ -230,6 +230,10 @@
             color: #dc2626;
             animation: blink 1.6s ease-in-out infinite;
         }
+        .badge-confirmado {
+            background: #dcfce7;
+            color: #16a34a;
+        }
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -272,8 +276,9 @@
 </header>
 
 <div class="stats">
-    <div class="stat-chip amber"><span class="stat-dot"></span> 12 Pendentes</div>
+    <div class="stat-chip amber"><span class="stat-dot"></span> 10 Pendentes</div>
     <div class="stat-chip blue"><span class="stat-dot"></span> 12 Eventos</div>
+    <div class="stat-chip" style="border-color:#bbf7d0;color:#15803d;"><span class="stat-dot" style="background:#16a34a;"></span> 2 Confirmados</div>
 </div>
 
 <main id="schedule"></main>
@@ -285,10 +290,10 @@ var events = [
     // 1ª Semana
     { date:"03", weekday:"Qua", type:"Célula",      hora:"19:30", resp:"Vivi e equipe",       status:"pendente" },
     { date:"07", weekday:"Dom", type:"Culto Manhã",  hora:"10:00", resp:"Tom e equipe",         status:"pendente" },
-    { date:"07", weekday:"Dom", type:"Culto Noite",  hora:"17:45", resp:"Eliseu e equipe",      status:"pendente" },
+    { date:"07", weekday:"Dom", type:"Culto Noite",  hora:"17:45", resp:"Eliseu e equipe",      status:"confirmado" },
     // 2ª Semana
     { date:"10", weekday:"Qua", type:"Célula",       hora:"19:30", resp:"Rone e equipe",        status:"pendente" },
-    { date:"14", weekday:"Dom", type:"Culto Manhã",  hora:"10:00", resp:"Eliseu e equipe",      status:"pendente" },
+    { date:"14", weekday:"Dom", type:"Culto Manhã",  hora:"10:00", resp:"Eliseu e equipe",      status:"confirmado" },
     { date:"14", weekday:"Dom", type:"Culto Noite",  hora:"17:45", resp:"José Euclides Band",   status:"pendente" },
     // 3ª Semana
     { date:"17", weekday:"Qua", type:"Célula",       hora:"19:30", resp:"Vivi e equipe",        status:"pendente" },
@@ -353,8 +358,13 @@ weeks.forEach(function(week) {
         right.className = "card-right";
 
         var badge = document.createElement("span");
-        badge.className = "badge-status badge-pendente";
-        badge.textContent = "⏳ Pendente";
+        if (ev.status === "confirmado") {
+            badge.className = "badge-status badge-confirmado";
+            badge.textContent = "✅ Confirmado";
+        } else {
+            badge.className = "badge-status badge-pendente";
+            badge.textContent = "⏳ Pendente";
+        }
         right.appendChild(badge);
 
         card.appendChild(dateBlock);
@@ -368,16 +378,4 @@ weeks.forEach(function(week) {
 
 var notesBg = document.getElementById("notesBg");
 var symbols = ["♩","♪","♫","♬","🎵","🎶","✝","🕊","🙌","🎸","🥁","🎹","🎺","🎻"];
-for (var i = 0; i < 22; i++) {
-    var el = document.createElement("span");
-    el.className = "note";
-    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    el.style.left = Math.random() * 100 + "vw";
-    el.style.animationDuration = (18 + Math.random() * 22) + "s";
-    el.style.animationDelay = (Math.random() * 20) + "s";
-    el.style.fontSize = (1.2 + Math.random() * 2) + "rem";
-    notesBg.appendChild(el);
-}
-</script>
-</body>
-</html>
+for (var i = 0; i < 22
