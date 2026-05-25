@@ -306,12 +306,14 @@ var events = [
 ];
 
 function cardClass(ev) {
-    if (ev.type === "Célula") return "celula";
-    return ev.type === "Culto Manhã" ? "culto-manha" : "culto-noite";
+    if (ev.type.indexOf("lula") !== -1) return "celula";
+    if (ev.type.indexOf("anh") !== -1) return "culto-manha";
+    return "culto-noite";
 }
 function typeLabel(ev) {
-    if (ev.type === "Célula") return "🏡 Célula";
-    return ev.type === "Culto Manhã" ? "☀️ Culto Manhã" : "🌙 Culto Noite";
+    if (ev.type.indexOf("lula") !== -1) return "🏡 Célula";
+    if (ev.type.indexOf("anh") !== -1) return "☀️ Culto Manhã";
+    return "🌙 Culto Noite";
 }
 
 var weeks = [
@@ -377,5 +379,4 @@ weeks.forEach(function(week) {
 });
 
 var notesBg = document.getElementById("notesBg");
-var symbols = ["♩","♪","♫","♬","🎵","🎶","✝","🕊","🙌","🎸","🥁","🎹","🎺","🎻"];
-for (var i = 0; i < 22
+var symbols = ["♩","♪","♫","♬","🎵","🎶","✝","🕊","🙌","🎸","�
