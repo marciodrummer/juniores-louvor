@@ -1,40 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escala de Louvor - Junho 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #f5c842; --orange: #ff7043; --rose: #e91e8c;
-            --purple: #7c3aed; --blue: #2563eb; --teal: #0d9488;
-            --bg: #fff8f0; --card: #ffffff; --text: #1a1a2e; --muted: #6b6b8a;
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden; }
-        body::before { content:''; position:fixed; inset:0;
-            background: radial-gradient(ellipse at 10% 20%,rgba(245,200,66,.18) 0%,transparent 50%),
-                        radial-gradient(ellipse at 90% 10%,rgba(233,30,140,.13) 0%,transparent 50%),
-                        radial-gradient(ellipse at 80% 80%,rgba(124,58,237,.12) 0%,transparent 50%),
-                        radial-gradient(ellipse at 20% 90%,rgba(37,99,235,.1) 0%,transparent 50%);
-            pointer-events:none; z-index:0; }
-        .notes-bg { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
-        .note { position:absolute; opacity:.07; animation:floatNote linear infinite; }
-        @keyframes floatNote {
-            0%   { transform:translateY(110vh) rotate(0deg);   opacity:0; }
-            10%  { opacity:.08; }
-            90%  { opacity:.08; }
-            100% { transform:translateY(-10vh) rotate(360deg); opacity:0; }
-        }
-        header { position:relative; z-index:1; text-align:center; padding:56px 20px 40px; }
-        .header-badge { display:inline-block; background:linear-gradient(135deg,var(--gold),var(--orange));
-            color:#fff; font-size:.78rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase;
-            padding:6px 18px; border-radius:100px; margin-bottom:18px; box-shadow:0 4px 16px rgba(245,112,66,.35); }
-        header h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,6vw,3.8rem); font-weight:900;
-            line-height:1.1; background:linear-gradient(135deg,var(--orange) 0%,var(--rose) 50%,var(--purple) 100%);
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; }
-        header p { color:var(--muted); font-size:1.05rem; font-weight:600; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escala de Louvor - Julho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --gold: #f5c842; --orange: #ff7043; --rose: #e91e8c; --purple: #7c3aed;
+        --blue: #2563eb; --teal: #0d9488; --green: #16a34a; --bg: #fff8f0;
+        --card: #ffffff; --text: #1a1a2e; --muted: #6b6b8a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+    body::before {
+        content: ''; position: fixed; inset: 0;
+        background: radial-gradient(ellipse at 10% 20%, rgba(245,200,66,0.18) 0%, transparent 50%),
+                    radial-gradient(ellipse at 90% 10%, rgba(233,30,140,0.13) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 80%, rgba(124,58,237,0.12) 0%, transparent 50%),
+                    radial-gradient(ellipse at 20% 90%, rgba(37,99,235,0.1) 0%, transparent 50%);
+        pointer-events: none; z-index: 0;
+    }
+    .notes-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .note { position: absolute; opacity: 0.07; animation: floatNote linear infinite; }
+    @keyframes floatNote {
+        0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.08; }
+        90% { opacity: 0.08; }
+        100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+    header { position: relative; z-index: 1; text-align: center; padding: 56px 20px 40px; }
+    .header-badge { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--orange)); color: white; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 22px; box-shadow: 0 4px 14px rgba(255,112,67,0.3); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; line-height: 1.15; background: linear-gradient(135deg, var(--rose), var(--purple), var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    header p { margin-top: 12px; color: var(--muted); font-weight: 700; font-size: 0.95rem; }
+    .emoji-row { margin-top: 18px; font-size: 1.4rem; letter-spacing: 8px; }
+
+    .stats { position: relative; z-index: 1; max-width: 560px; margin: 0 auto 40px; display: flex; justify-content: center; gap: 14px; padding: 0 20px; flex-wrap: wrap; }
+    .stat { background: var(--card); border-radius: 18px; padding: 16px 26px; text-align: center; box-shadow: 0 6px 20px rgba(26,26,46,0.06); min-width: 120px; }
+    .stat .num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; }
+    .stat .lbl { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 2px; }
+    .stat.confirmados .num { color: #15803d; }
+    .stat.pendentes .num { color: #dc2626; }
+    .stat.total .num { background: linear-gradient(135deg, var(--purple), var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+    main { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 0 20px 60px; display: flex; flex-direction: column; gap: 14px; }
+    .card { background: var(--card); border-radius: 20px; padding: 18px 22px; display: grid; grid-template-columns: 70px 1fr auto; align-items: center; gap: 18px; box-shadow: 0 6px 20px rgba(26,26,46,0.06); border-left: 6px solid var(--gold); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-2px); }
+    .card.manha { border-left-color: var(--orange); }
+    .card.noite { border-left-color: var(--purple); }
+    .card.celula { border-left-color: var(--teal); }
+
+    .date-block { text-align: center; }
+    .date-day { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; line-height: 1; }
+    .date-weekday { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+
+    .card-info .card-type { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; display: block; }
+    .manha .card-type { color: var(--orange); }
+    .noite .card-type { color: var(--purple); }
+    .celula .card-type { color: var(--teal); }
+    .card-name { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .card-time { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+
+    .card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+    .badge-status { font-size: 0.7rem; font-weight: 800; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+    .badge-confirmado { background: #dcfce7; color: #15803d; }
+    .badge-pendente { background: #fee2e2; color: #dc2626; animation: blink 1.6s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+    .btn-agenda { display: inline-flex; align-items: center; gap: 5px; font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 800; color: white; background: linear-gradient(135deg, var(--blue), var(--purple)); border-radius: 100px; padding: 6px 14px; text-decoration: none; white-space: nowrap; box-shadow: 0 3px 10px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+    .btn-agenda:hover { opacity: 0.85; transform: scale(1.05); }
+
+    footer { position: relative; z-index: 1; text-align: center; padding: 20px 20px 50px; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+
+    @media (max-width: 560px) {
+        .card { grid-template-columns: 64px 1fr; grid-template-rows: auto auto; padding: 16px; gap: 10px; }
+        .card-right { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; }
+        header { padding: 36px 16px 20px; }
+        h1 { font-size: 2rem; }
+    }
+</style>
+</head>
+<body>
+
+<div class="notes-bg" id="notesBg"></div>
+
+<header>
+    <div class="header-badge">🎵 Ministério de Louvor Juniores</div>
+    <h1>Escala de Louvor<br>Julho 2026</h1>
+    <p>Adoração · Música · Célula · Culto</p>
+    <div class="emoji-row">🎶 ✝️ 🎸 🥁 🎹</div>
+</header>
+
+<div class="stats">
+    <div class="stat total">
+        <div class="num" id="statTotal">12</div>
+        <div class="lbl">Eventos</div>
+    </div>
+    <div class="stat confirmados">
+        <div class="num" id="statConfirmados">9</div>
+        <div class="lbl">Confirmados</div>
+    </div>
+    <div class="stat pendentes">
+        <div class="num" id="statPendentes">3</div>
+        <div class="lbl">Pendentes</div>
+    </div>
+</div>
+
+<main id="mainList"></main>
+
+<footer>
+    Servir é um privilégio · Faça tudo com amor — 1 Coríntios 16:14
+</footer>
+
+<script>
+    const escala = [
+        { data: '20260701', dia: '01/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Vivi e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260705', dia: '05/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'José Euclides Band', classe: 'manha', status: 'confirmado' },
+        { data: '20260705', dia: '05/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Tom e equipe', classe: 'noite', status: 'confirmado' },
+        { data: '20260708', dia: '08/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260712', dia: '12/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Eliseu e equipe', classe: 'manha', status: 'pendente' },
+        { data: '20260712', dia: '12/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Taynara', classe: 'noite', status: 'confirmado' },
+        { data: '20260715', dia: '15/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Vivi e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260719', dia: '19/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'José Euclides Band', classe: 'manha', status: 'confirmado' },
+        { data: '20260719', dia: '19/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Lelei Adorador', classe: 'noite', status: 'pendente' },
+        { data: '20260722', dia: '22/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260726', dia: '26/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Eliseu e equipe', classe: 'manha', status: 'pendente' },
+        { data: '20260726', dia: '26/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Tom e equipe', classe: 'noite', status: 'confirmado' }
+    ];
+
+    function createAgendaLink(item) {
+        const baseUrl = "https://www.google.com/calendar/render?action=TEMPLATE";
+        const title = encodeURIComponent(`Louvor Juniores - ${item.tipo} (${item.lider})`);
+        const startHour = item.hora.replace(':', '');
+        const start = `${item.data}T${startHour}00`;
+        const [h, m] = item.hora.split(':').map(Number);
+        const durationHours = item.tipo === 'Noite' ? 1.5 : (item.tipo === 'Célula' ? 1.5 : 1.5);
+        let endTotalMin = h * 60 + m + durationHours * 60;
+        const endH = String(Math.floor(endTotalMin / 60)).padStart(2, '0');
+        const endM = String(Math.round(endTotalMin % 60)).padStart(2, '0');
+        const end = `${item.data}T${endH}${endM}00`;
+        const details = encodeURIComponent(`Ministério de Louvor Juniores\nResponsável: ${item.lider}`);
+        return `${baseUrl}&text=${title}&dates=${start}/${end}&details=${details}`;
+    }
+
+    const main = document.getElementById('mainList');
+    let confirmados = 0, pendentes = 0;
+
+    escala.forEach(item => {
+        if (item.status === 'confirmado') confirmados++; else pendentes++;
+
+        const card = document.createElement('div');
+        card.className = `card ${item.classe}`;
+        card.innerHTML = `
+            <div class="date-block">
+                <div class="date-day">${item.dia.split('/')[0]}</div>
+                <div class="date-weekday">${item.diaSemana.slice(0,3)}</div>
+            </div>
+            <div class="card-info">
+                <span class="card-type">${item.tipo}</span>
+                <div class="card-name">${item.lider}</div>
+                <div class="card-time">🕐 ${item.hora}h</div>
+            </div>
+            <div class="card-right">
+                <span class="badge-status badge-${item.status}">${item.status === 'confirmado' ? '✓ Confirmado' : '⏳ Pendente'}</span>
+                <a class="btn-agenda" href="${createAgendaLink(item)}" target="_blank" rel="noopener">📅 Adicionar na Agenda</a>
+            </div>
+        `;
+        main.appendChild(card);
+    });
+
+    document.getElementById('statTotal').textContent = escala.length;
+    document.getElementById('statConfirmados').textContent = confirmados;
+    document.getElementById('statPendentes').textContent = pendentes;
+
+    const notesBg = document.getElementById('notesBg');
+    const noteChars = ['♪', '♫', '♬', '♩'];
+    for (let i = 0; i < 14; i++) {
+        const n = document.createElement('div');
+        n.className = 'note';
+        n.textContent = noteChars[Math.floor(Math.random() * noteChars.length)];
+        n.style.left = Math.random() * 100 + '%';
+        n.style.fontSize = (18 + Math.random() * 26) + 'px';
+        n.style.color = ['#f5c842','#ff7043','#e91e8c','#7c3aed','#2563eb','#0d9488'][Math.floor(Math.random()*6)];
+        n.style.animationDuration = (14 + Math.random() * 12) + 's';
+        n.style.animationDelay = (Math.random() * 10) + 's';
+        notesBg.appendChild(n);
+    }
+</script>
+
+</body>
+</html>        header p { color:var(--muted); font-size:1.05rem; font-weight:600; }
         .emoji-row { margin-top:14px; font-size:1.6rem; letter-spacing:.2em; animation:pulse 2s ease-in-out infinite; }
         @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.08); } }
         .stats { position:relative; z-index:1; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; padding:0 20px 40px; }
