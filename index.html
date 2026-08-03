@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Escala de Louvor - Julho 2026</title>
+<title>Escala de Louvor - Agosto 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
     :root {
@@ -59,6 +59,7 @@
     .noite .card-type { color: var(--purple); }
     .celula .card-type { color: var(--teal); }
     .card-name { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .card-name.tbd { color: var(--muted); font-style: italic; }
     .card-time { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
 
     .card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
@@ -86,23 +87,23 @@
 
 <header>
     <div class="header-badge">🎵 Ministério de Louvor Juniores</div>
-    <h1>Escala de Louvor<br>Julho 2026</h1>
+    <h1>Escala de Louvor<br>Agosto 2026</h1>
     <p>Adoração · Música · Célula · Culto</p>
     <div class="emoji-row">🎶 ✝️ 🎸 🥁 🎹</div>
 </header>
 
 <div class="stats">
     <div class="stat total">
-        <div class="num" id="statTotal">12</div>
+        <div class="num" id="statTotal">11</div>
         <div class="lbl">Eventos</div>
     </div>
     <div class="stat confirmados">
-        <div class="num" id="statConfirmados">9</div>
+        <div class="num" id="statConfirmados">10</div>
         <div class="lbl">Confirmados</div>
     </div>
     <div class="stat pendentes">
-        <div class="num" id="statPendentes">3</div>
-        <div class="lbl">Pendentes</div>
+        <div class="num" id="statPendentes">1</div>
+        <div class="lbl">A definir</div>
     </div>
 </div>
 
@@ -114,18 +115,17 @@
 
 <script>
     const escala = [
-        { data: '20260701', dia: '01/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Vivi e equipe', classe: 'celula', status: 'confirmado' },
-        { data: '20260705', dia: '05/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Tom e equipe', classe: 'manha', status: 'confirmado' },
-        { data: '20260705', dia: '05/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'José Euclides Band', classe: 'noite', status: 'confirmado' },
-        { data: '20260708', dia: '08/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
-        { data: '20260712', dia: '12/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Eliseu e equipe', classe: 'manha', status: 'pendente' },
-        { data: '20260712', dia: '12/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Taynara', classe: 'noite', status: 'confirmado' },
-        { data: '20260715', dia: '15/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Vivi e equipe', classe: 'celula', status: 'confirmado' },
-        { data: '20260719', dia: '19/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'José Euclides Band', classe: 'manha', status: 'confirmado' },
-        { data: '20260719', dia: '19/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Lelei Adorador', classe: 'noite', status: 'pendente' },
-        { data: '20260722', dia: '22/07', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
-        { data: '20260726', dia: '26/07', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Eliseu e equipe', classe: 'manha', status: 'pendente' },
-        { data: '20260726', dia: '26/07', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Tom e equipe', classe: 'noite', status: 'confirmado' }
+        { data: '20260809', dia: '09/08', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Tom e equipe', classe: 'manha', status: 'confirmado' },
+        { data: '20260809', dia: '09/08', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Eliseu e equipe', classe: 'noite', status: 'confirmado' },
+        { data: '20260812', dia: '12/08', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260816', dia: '16/08', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Angela e equipe', classe: 'manha', status: 'confirmado' },
+        { data: '20260816', dia: '16/08', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Taynara', classe: 'noite', status: 'confirmado' },
+        { data: '20260819', dia: '19/08', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Vivi e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260823', dia: '23/08', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Tom e equipe', classe: 'manha', status: 'confirmado' },
+        { data: '20260823', dia: '23/08', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'Lelei Adorador', classe: 'noite', status: 'confirmado' },
+        { data: '20260826', dia: '26/08', diaSemana: 'Quarta', hora: '19:30', tipo: 'Célula', lider: 'Rone e equipe', classe: 'celula', status: 'confirmado' },
+        { data: '20260830', dia: '30/08', diaSemana: 'Domingo', hora: '10:00', tipo: 'Manhã', lider: 'Eliseu e equipe', classe: 'manha', status: 'confirmado' },
+        { data: '20260830', dia: '30/08', diaSemana: 'Domingo', hora: '17:45', tipo: 'Noite', lider: 'A definir', classe: 'noite', status: 'pendente' }
     ];
 
     function createAgendaLink(item) {
@@ -134,7 +134,7 @@
         const startHour = item.hora.replace(':', '');
         const start = `${item.data}T${startHour}00`;
         const [h, m] = item.hora.split(':').map(Number);
-        const durationHours = item.tipo === 'Noite' ? 1.5 : (item.tipo === 'Célula' ? 1.5 : 1.5);
+        const durationHours = 1.5;
         let endTotalMin = h * 60 + m + durationHours * 60;
         const endH = String(Math.floor(endTotalMin / 60)).padStart(2, '0');
         const endM = String(Math.round(endTotalMin % 60)).padStart(2, '0');
@@ -148,6 +148,7 @@
 
     escala.forEach(item => {
         if (item.status === 'confirmado') confirmados++; else pendentes++;
+        const isTbd = item.lider === 'A definir';
 
         const card = document.createElement('div');
         card.className = `card ${item.classe}`;
@@ -158,12 +159,12 @@
             </div>
             <div class="card-info">
                 <span class="card-type">${item.tipo}</span>
-                <div class="card-name">${item.lider}</div>
+                <div class="card-name${isTbd ? ' tbd' : ''}">${item.lider}</div>
                 <div class="card-time">🕐 ${item.hora}h</div>
             </div>
             <div class="card-right">
-                <span class="badge-status badge-${item.status}">${item.status === 'confirmado' ? '✓ Confirmado' : '⏳ Pendente'}</span>
-                <a class="btn-agenda" href="${createAgendaLink(item)}" target="_blank" rel="noopener">📅 Adicionar na Agenda</a>
+                <span class="badge-status badge-${item.status}">${item.status === 'confirmado' ? '✓ Confirmado' : '⏳ A definir'}</span>
+                ${isTbd ? '' : `<a class="btn-agenda" href="${createAgendaLink(item)}" target="_blank" rel="noopener">📅 Adicionar na Agenda</a>`}
             </div>
         `;
         main.appendChild(card);
